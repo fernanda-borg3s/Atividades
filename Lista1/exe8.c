@@ -3,17 +3,18 @@
 // números inteiros
 
 int CalcularMDC(int a, int b) {
-    //NAO SEI CALCULAR MDC NESSE CARAI
-    int resultado = a + b;
-     return resultado;
+   while(b != 0){
+    int resto = a % b;
+    a = b;
+    b = resto;
+   }
+   return a;
 }
 int main()
 {
     int num1, num2;
-     printf("Digite um número: ");
-    scanf("%d", &num1);
-    printf("Digite outro número: ");
-    scanf("%d", &num2);
+     printf("Digite dois números: ");
+    scanf("%d %d", &num1, &num2);
    int mdc = CalcularMDC(num1, num2);
    printf("O MDC de %d e %d eh: %d\n", num1, num2, mdc);
     
